@@ -1,0 +1,120 @@
+.bgimg {
+    /* The image used */
+    background-image: url("../..//assets/images/Rectangle 84.png");
+    min-height: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container {
+    position: relative;
+}
+
+.navbar-brand {
+    color: #FFF;
+    // font-size: 25px;
+    font-size: 140%;
+    font-family: Quicksand;
+    font-weight: 600;
+    line-height: 134.906%;
+}
+
+.nav-link {
+
+    color: #FFF;
+    // font-size: 20px;
+    font-size: 110%;
+    font-family: Campton;
+    font-weight: 400;
+    // margin: 6px;
+    // line-height: 134.906%;
+
+}
+
+.active {
+    font-weight: 600;
+}
+
+.nav-icon {
+    margin-left: 290px;
+}
+
+.nav-hr {
+    opacity: 1;
+    margin: 0px;
+
+}
+
+.cdate {
+    color: #FFF;
+    font-size: 100%;
+    font-family: Campton;
+    font-weight: 500;
+    line-height: 134.906%;
+}
+
+.greet {
+    color: #FFF;
+    // font-size: 64px;
+    font-size: 220%;
+    font-family: Campton;
+    font-weight: 700;
+    // line-height: 134.906%;
+}
+
+.subtext {
+    color: #FFF;
+    // font-size: 24px;
+    font-size: 110%;
+    font-family: Campton;
+    line-height: 1%;
+}
+
+.property {
+    color: #FFF;
+    font-size: 110%;
+    font-family: Campton;
+    line-height: 134.906%;
+}
+
+.value {
+
+    color: #FFF;
+    font-size: 150%;
+    // font-size: 40px;
+    font-family: Campton;
+    font-weight: 700;
+    line-height: 134.906%;
+}
+
+li.list-inline-item {
+    max-width: 19%;
+}
+
+.img-fluid{
+    max-width: 100%;
+    border-top-left-radius: 3%;
+    border-top-right-radius: 3%;
+}
+
+.card {
+    background-color: white;
+    border-radius: 3%;
+    box-sizing: content-box;
+} 
+
+.pdetails {
+    color: #000;
+    font-size: 100%;
+    font-family: Campton;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.pstatus {
+    color: red;
+    font-size: 90%;
+    font-weight: 400;
+}

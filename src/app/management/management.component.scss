@@ -1,0 +1,42 @@
+.dstatus{
+    padding-left: 0px;
+}
+
+li.list-inline-item {
+    max-width: 19%;
+}
+
+.img-fluid{
+    width: 100%;
+    border-top-left-radius: 3%;
+    border-top-right-radius: 3%;
+}
+
+.card {
+    background-color: white;
+} 
+
+.pdetails {
+    color: #000;
+    font-size: 100%;
+    font-family: Campton;
+    font-style: normal;
+    font-weight: 500;
+line-height: 134.906%;
+}
+
+.pvalue {
+    color: #5F5F5F;
+    font-size: 90%;
+    font-weight: 400;
+}
+
+.Occupied {
+    color: red;
+    font-weight: 400;
+}
+
+.Available{
+    color:#007B2A;
+    font-weight: 400;
+}

@@ -30,7 +30,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.scss",
+              "src/styles.scss",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           },
@@ -93,12 +96,18 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.scss",
+              "src/styles.scss",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "a11e7685-6587-4480-b8f1-9ed3c122fdab"
   }
 }

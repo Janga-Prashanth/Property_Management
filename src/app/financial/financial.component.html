@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row">
+        <h1 class="text-center header my-2">
+            Financial
+        </h1>
+    </div>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-2"></div>
+        <div class="col-2 ms-3 text">
+            Total Income
+            <div class="value">$-20,000</div>
+        </div>
+        <div class="col-2 text">
+            Outstanding Payment
+            <div class="value">$-5000</div>
+        </div>
+        <div class="col-2"></div>
+        <div class="col-2"></div>
+    </div>
+    <div class="row mx-3 mt-3">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="row mb-3">
+                <div class="col-6 text-start transaction">Transactions</div>
+                <div class="col-6 text-end date">Jun 01,2023 - Jun 05,2023</div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr class="thead">
+                            <th class="hbgc">Date</th>
+                            <th class="hbgc">Name</th>
+                            <th class="hbgc">Transaction ID</th>
+                            <th class="hbgc credit">Credit/<span class="debit">Debit</span></th>
+                            <th class="hbgc"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="tdata" *ngFor="let f of finance">
+                            <td>{{f.tdate}} </td>
+                            <td>{{f.tname}} </td>
+                            <td>{{f.tID}} </td>
+                            <td class="credit">{{f.tstatus | currency}}/- </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <mat-icon class="vert-ellipse">more_vert</mat-icon>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item disabled" href="#">Edit</a></li>
+                                        <li><a class="dropdown-item disabled" href="#">Delete</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>

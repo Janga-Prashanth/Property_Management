@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <h1 class="maintain mt-3 ms-1">Maintenance</h1>
+        <ul class="list-inline">
+            <li class="list-inline-item mb-3" *ngFor="let m of allmaintenance;">
+                <button class="btn btn-default" (click)="getproductinfo(m)"> <!---->
+                    <div class="card">
+                        <img src="{{m.pimg}}" class="img-fluid" alt="property image.jpg">
+                        <div class="px-1 pb-2 pdetails text-start">
+                            <p>{{m.issue}}</p>
+                            <p>Prority Level : <br><span class="pvalue {{m.priority}}">{{m.priority}}</span></p>
+                            <p>Status: <br><span class="pvalue">{{m.status}}</span></p>
+                            <p>Staff Details: <br><span class="pvalue">{{m.staff_details}}</span></p>
+                        </div>
+                    </div>
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>

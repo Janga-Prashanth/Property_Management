@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-1 my-auto ms-3">Filter As: </div>
+        <div class="col-2 dstatus">
+            <select  class="form-select mx-0" aria-label="Default select example"> <!--(change)="filterForeCasts($event.target.value)"-->
+                <option selected>Status</option>
+                <option value="Occupied" disabled>Occupied</option>
+                <option value="Available" disabled>Available</option>
+            </select>
+              <!-- <mat-icon class="filterIcon" [matMenuTriggerFor]="filter">filter_list</mat-icon> 
+                <mat-menu #filter="matMenu">
+                  <button class="matMenuDef" mat-menu-item (click)="updatestatus('Occupied')">Available</button>
+                  <button class="matMenuDef" mat-menu-item (click)="updatestatus('Available')">Occupied</button>
+                </mat-menu> -->
+        </div>
+        <div class="col-2 dstatus">
+            <select class="form-select mx-0" aria-label="Default select example">
+                <option selected>Property Type</option>
+                <option value="1" disabled>Residential</option>
+                <option value="2" disabled>Commercial</option>
+                <option value="3" disabled>Industrial</option>
+                <option value="4" disabled>Special Use</option>
+            </select>
+        </div>
+        <div class="col-4"></div>
+        <div class="col-2 text-end"><button class="btn btn-primary" (click)="addpdialog()">Add Property</button></div>
+    </div>
+
+    <div class="row mt-2">
+        <ul class="list-inline">
+            <li class="list-inline-item mt-3" *ngFor="let property of allproperties; let i=index">
+                <!-- <span *ngIf=" i >=4 "> -->
+                <button class="btn btn-default" (click)="getproductinfo(property)"> <!---->
+                    <div class="card">
+                        <img src="{{property.img}}" class="img-fluid" alt="property image.jpg">
+                        <div class="px-1 pb-2 pdetails text-start">
+                            <p>Property Name <span class="pvalue">{{property.name}}</span></p>
+                            <!-- <p>Address: <br><span class="pvalue">{{property.address.street_name}}, {{property.address.city}}, {{property.address.state}}, {{property.address.zip_code}}</span></p> -->
+                            <p>Current Status: <br><span class="{{property.status}}">{{property.status}}</span></p>
+                            <p>Rent: <br><span class="pvalue">{{property.rent | currency}}/-</span></p>
+                            <p>Lease End Date: <br><span class="pvalue">{{property.lease_details}}</span></p>
+                        </div>
+                    </div>
+                </button>
+                <!-- </span> -->
+            </li>
+        </ul>
+    </div>
+</div>

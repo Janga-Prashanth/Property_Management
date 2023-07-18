@@ -1,0 +1,54 @@
+.maintain {
+    color: #000;
+    font-family: Campton;
+    // font-size: 32px;
+    font-size: 170%;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 134.906%;
+}
+
+container {
+    background-color: #FFF;
+}
+
+li.list-inline-item {
+    max-width: 19%;
+}
+
+.img-fluid{
+    width: 100%;
+    border-top-left-radius: 3%;
+    border-top-right-radius: 3%;
+}
+
+.card {
+    background-color: white;
+}
+
+.pdetails {
+    color: #000;
+    font-size: 100%;
+    font-family: Campton;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 134.906%;
+}
+
+.pvalue {
+    color: #5F5F5F;
+    font-size: 90%;
+    font-weight: 400;
+}
+
+.High {
+    color: red;
+}
+
+.Medium {
+    color: blue;
+}
+
+.Low {
+    color: green;
+}
