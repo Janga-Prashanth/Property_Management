@@ -3,7 +3,7 @@
         <h1 class="maintain mt-3 ms-1">Maintenance</h1>
         <ul class="list-inline">
             <li class="list-inline-item mb-3" *ngFor="let m of allmaintenance;">
-                <button class="btn btn-default" (click)="getproductinfo(m)"> <!---->
+                <button class="btn btn-default" [routerLink]="['/maintenance/maintenancedetails',m.id]" routerLinkActive="active"> <!--(click)="getproductinfo(m)"-->
                     <div class="card">
                         <img src="{{m.pimg}}" class="img-fluid" alt="property image.jpg">
                         <div class="px-1 pb-2 pdetails text-start">
@@ -15,6 +15,7 @@
                     </div>
                 </button>
             </li>
+            <div class="col-10 bg-light ms-5" style="border-radius: 20px;"><router-outlet></router-outlet></div>
         </ul>
     </div>
 </div>

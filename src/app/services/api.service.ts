@@ -39,8 +39,16 @@ export class ApiService {
     return this.http.get(this.baseUrl+"tenants");
   }
 
+  gettenant(id:number){
+    return this.http.get(this.baseUrl+"tenants/"+id);
+  }
+
   getmaintenance(){
     return this.http.get(this.baseUrl+"maintenance/");
+  }
+  
+  getmaintenancestatus(id:number){
+    return this.http.get(this.baseUrl+"maintenance/"+id);
   }
 
   getpropertytype(){
@@ -54,4 +62,5 @@ export class ApiService {
   upload(formdata:FormData){
     return this.http.post(this.baseUrl+"images/",formdata);
   }
+  
 }

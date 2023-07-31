@@ -5,8 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
-import { HttpClientModule } from '@angular/common/http'; 
-import { RouterModule, Routes } from '@angular/router';    //to enable routing
+import { HttpClientModule } from '@angular/common/http';
 import { PropertyDetailsComponent } from './property-details/property-details.component';
 import { MatDialogModule } from "@angular/material/dialog";
 import { ManagementComponent } from './management/management.component';
@@ -26,17 +25,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoaderService } from './services/loader.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import {MatMenuModule} from '@angular/material/menu';
-
-const appRoute: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  {path: 'propertydetails/:id',component:PropertyDetailsComponent},
-  { path: 'managing', component: ManagementComponent},
-  { path: 'tenant', component: TenantsComponent },
-  { path: 'maintenance', component: MaintenanceComponent },
-  { path: 'finance', component: FinancialComponent },
-]
-
+import { TenantDetailsComponent } from './tenant-details/tenant-details.component';
+import { MaintenanceDetailsComponent } from './maintenance-details/maintenance-details.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +40,10 @@ const appRoute: Routes = [
     SpinnerComponent,
     ApppropertyComponent,
     NavbarComponent,
+    HomeComponent,
+    PropertyDetailsComponent,
+    TenantDetailsComponent,
+    MaintenanceDetailsComponent
   ],
 
   imports: [
@@ -58,7 +52,7 @@ const appRoute: Routes = [
     BrowserAnimationsModule,
     HttpClientModule,
     MatDialogModule,    
-    RouterModule.forRoot(appRoute), 
+    // RouterModule.forRoot(appRoute), 
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,

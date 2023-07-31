@@ -30,7 +30,7 @@
         <ul class="list-inline">
             <li class="list-inline-item mt-3" *ngFor="let property of allproperties; let i=index">
                 <!-- <span *ngIf=" i >=4 "> -->
-                <button class="btn btn-default" (click)="getproductinfo(property)"> <!---->
+                <button class="btn btn-default" [routerLink]="['/properties/propertydetails',property.id]" routerLinkActive="active"> <!--(click)="getproductinfo(property)"-->
                     <div class="card">
                         <img src="{{property.img}}" class="img-fluid" alt="property image.jpg">
                         <div class="px-1 pb-2 pdetails text-start">
@@ -44,6 +44,7 @@
                 </button>
                 <!-- </span> -->
             </li>
+            <div class="col-10 bg-light ms-5 pdetails" style="border-radius: 20px;"><router-outlet></router-outlet></div>
         </ul>
     </div>
 </div>

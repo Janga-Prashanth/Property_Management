@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
-import { MatDialog } from '@angular/material/dialog';
-// import { PropertyDetailsComponent } from '../property-details/property-details.component';
-import { Router } from '@angular/router';
+import { MAT_DIALOG_DATA,MatDialogRef,MatDialog } from '@angular/material/dialog';
+import { PropertyDetailsComponent } from '../property-details/property-details.component';
+import {ActivatedRoute, Router } from '@angular/router';
 
 
 
@@ -12,10 +12,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit{
+  condition=false;
+
 
   constructor(private api : ApiService,
-    // private dialog : MatDialog,
-    private route: Router){}
+    public dialog: MatDialog, 
+    private route: ActivatedRoute, 
+    private router: Router
+    ){}
+
+
+    currentDialog: MatDialogRef<any> = null;
+    openDialog(tabvalue: number) {      
+       this.currentDialog = this.dialog.open(PropertyDetailsComponent, {
+        data: {tabvalue},
+      });
+    }
 
     ngOnInit(): void {
       this.getallproperty();
@@ -33,18 +45,21 @@ export class HomeComponent implements OnInit{
     )
   }
 
-  // getproductinfo(row:any) {
-  //   const dialogRef2=this.dialog.open(PropertyDetailsComponent, {      
-  //     width:'30%',
-  //     height: '100%',
-  //     position: { right: '0' },
-  //     data:row     //sending related row value to  MAT_DIALOG_DATA
-  //   });
+  getproductinfo() {
+    const dialogRef2=this.dialog.open(PropertyDetailsComponent, {
+      width:'30%',
+      height: '100%',
+      position: { right: '0' },
+    });
+  }
+
+  // getproduct(id:number){
+  //   let dialogref= this.route.navigatebyURL(['/propertydetails',id])
+  //   console.log(dialogref);
   // }
 
-  getproduct(id:number){
-    let dialogref= this.route.navigate(['/propertydetails',id])
-    console.log(dialogref);
-  }
+  // setcondition(){
+  //  this.condition=true;
+  // }
 
 }

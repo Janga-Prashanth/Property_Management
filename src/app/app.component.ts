@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
@@ -6,23 +6,30 @@ import { NavigationEnd, Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+
+  ngOnInit(): void {
+    this.navbar();    
+  }
   title = 'Property_Management';
 
   homec = false;
 
-  constructor(private router: Router){
-    router.events.subscribe(
+  constructor(private router: Router){}
+
+  navbar(){
+    this.router.events.subscribe(
       (val)=>{
         if(val instanceof NavigationEnd){
-          if(val.url=='/managing' || val.url=='/tenant' || val.url=='/maintenance' || val.url=='/finance'){
-            this.homec=true
+          if(val.url.includes('/home')){   //if(val.url=='/home')
+            this.homec=false
           }
           else{
-            this.homec=false
+            this.homec=true
           }
         }
       }
     )
   }
+
 }

@@ -26,7 +26,7 @@ export class TenantsComponent implements OnInit {
       },
       error: (err) => {alert("Error While Fetching the data")}
     } 
-    ) 
+    )
   }
 
   getproductinfo(row:any) {

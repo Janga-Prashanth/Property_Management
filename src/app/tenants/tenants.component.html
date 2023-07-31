@@ -2,19 +2,20 @@
     <div class="row">
         <h1 class="maintain mt-3 ms-1">Maintenance</h1>
         <ul class="list-inline">
-            <li class="list-inline-item mb-3" *ngFor="let t of alltenants;">
-                <button class="btn btn-default" (click)="getproductinfo(t)"> <!---->
+            <li class="list-inline-item mb-3" *ngFor="let property of alltenants;">
+                <button class="btn btn-default" [routerLink]="['/tenant/tenantdetails',property.id]" routerLinkActive="active"> <!--(click)="getproductinfo(t)"-->
                     <div class="card">
-                        <img src="{{t.img}}" class="img-fluid" alt="property image.jpg">
+                        <img src="{{property.img}}" class="img-fluid" alt="property image.jpg">
                         <div class="px-1 pb-2 pdetails text-start">
-                            <p>{{t.name}}</p>
-                            <p>Contact : <br><span class="pvalue">{{t.contact}}</span></p>
-                            <p>Lease Details: <br><span class="pvalue">{{t.lease_details}}</span></p>
-                            <p>Outstanding Payment :<br><span class="pvalue">{{t.ospayment}}</span></p>
+                            <p>{{property.name}}</p>
+                            <p>Contact : <br><span class="pvalue">{{property.contact}}</span></p>
+                            <p>Lease Details: <br><span class="pvalue">{{property.lease_details}}</span></p>
+                            <p>Outstanding Payment :<br><span class="pvalue">{{property.ospayment}}</span></p>
                         </div>
                     </div>
                 </button>
             </li>
+            <div class="col-10 bg-light ms-5" style="border-radius: 20px;"><router-outlet></router-outlet></div>
         </ul>
     </div>
 </div>

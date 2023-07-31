@@ -1,9 +1,37 @@
-<div>
-  <mat-dialog-content>
-    <img src="{{property.img}}" alt="" style="position: relative;">
-        <p >{{property.status}} </p>
-        <p>{{property.address.state}}</p>
-        <p>{{property.address.pincode}}</p>
-        <p>{{property.address.city}}</p>
-  </mat-dialog-content>
+<div class="container pdetails">
+  <div class="row">
+    <div class="col-6"><img src="{{property.img}}" class="mx-3 my-3 ps-5 pe-5 py-5 img-fluid img-thumbnail rounded" alt=""></div>
+    <div class="col-6">
+      <div class="my-4 pdetails">
+        <p>Property Name <span class="pvalue">{{property.name}}</span></p>
+        <p>Address: <br><span class="pvalue">{{property.address.street_name}}, {{property.address.city}},
+            {{property.address.state}}, {{property.address.Zip_Code}}</span></p>
+        <p>Current Status: <br><span class="{{property.status}}">{{property.status}}</span></p>
+        <div class="row">
+          <div class="col-6">
+            <p>Rent: <br><span class="pvalue">{{property.rent}}/-</span></p>
+          </div>
+          <div class="col-6">
+            <p>Outstanding Payment: <br><span class="pvalue">{{property.outsatnading_payment}}</span></p>
+          </div>
+          <div class="col-6">
+            <p>Tenant Details: <br><span class="pvalue">{{property.tenant_details}}</span></p>
+          </div>
+          <div class="col-6">
+            <p>Lease Details: <br><span class="pvalue">{{property.lease_details}}</span></p>
+          </div>
+          <div class="col-6">
+            <p>Maintenance Request: <br><span class="pvalue">{{property.maintainance_request}}</span></p>
+          </div>
+          <div class="col-6" *ngIf="homec">
+            <button class="btn bg-default text-danger pdetails" (click)="deleteproperty(property.id)" ><u>Remove This Property</u></button>
+          </div>
+          <div class="col-6" *ngIf="homec"></div>
+          <div class="col-6">
+            <button class="btn btn-primary px-5" routerLink="../../" routerLinkActive="active">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

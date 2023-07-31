@@ -25,11 +25,13 @@ export class ManagementComponent implements OnInit {
   public cacheForecasts !: WeatherForecast[] ;
 
   ngOnInit(): void {
+    
     this.getallproperty();
+    this.api.getproperties()
   }
 
   constructor(private api: ApiService,
-    private dialog : MatDialog){}
+    private dialog : MatDialog){ this.api.getproperties();}
 
     allproperties:any;
     getallproperty(){
