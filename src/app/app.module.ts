@@ -27,6 +27,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { TenantDetailsComponent } from './tenant-details/tenant-details.component';
 import { MaintenanceDetailsComponent } from './maintenance-details/maintenance-details.component';
+import { LoginComponent } from './login/login.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { MaintenanceDetailsComponent } from './maintenance-details/maintenance-d
     HomeComponent,
     PropertyDetailsComponent,
     TenantDetailsComponent,
-    MaintenanceDetailsComponent
+    MaintenanceDetailsComponent,
+    LoginComponent,
+    NotfoundComponent
   ],
 
   imports: [

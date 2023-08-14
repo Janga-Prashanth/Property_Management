@@ -4,6 +4,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { PropertyDetailsComponent } from '../property-details/property-details.component';
 import { ApppropertyComponent } from '../addproperty/addproperty.component';
 import {MatMenuModule} from '@angular/material/menu';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 
 interface WeatherForecast {
@@ -27,11 +29,13 @@ export class ManagementComponent implements OnInit {
   ngOnInit(): void {
     
     this.getallproperty();
-    this.api.getproperties()
+    this.api.getproperties();
   }
 
   constructor(private api: ApiService,
-    private dialog : MatDialog){ this.api.getproperties();}
+    private dialog : MatDialog,
+    private auths : AuthService,
+    private router : Router){ this.api.getproperties();}
 
     allproperties:any;
     getallproperty(){

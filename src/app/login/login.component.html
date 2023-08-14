@@ -1,0 +1,38 @@
+<div class="card mx-auto">
+    <div class="card-header text-center"> SignUp </div>
+    <div class="card-body">
+      <form [formGroup]="login" (ngSubmit)="onsubmit(login)">
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" name="email" formControlName="email" placeholder="Enter email">
+          <div *ngIf="f['email']?.['touched'] && f['email']?.['errors']" 
+            class="text-danger font-weight-bold">
+            <div *ngIf="f['email']?.['errors']?.['required']">
+              Email Required
+            </div>
+            <div *ngIf="f['email']?.['errors']?.['email']">
+              Inavlid Email
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" name="password" formControlName="password" minlength="5"
+            placeholder="Enter Password">
+          <div *ngIf="getC('password')?.['touched'] && getE('password')" 
+            class="text-danger font-weight-bold">  <!--Method 3-->
+            <div *ngIf="getE('password')?.['required']">
+              Password Required
+            </div>
+            <div *ngIf="getE('password')?.['minlength']">
+              Must Contain 5 Letters
+            </div>
+          </div>
+        </div>
+        <div align="center">
+            <button type="submit" class="btn btn-primary mt-3" [disabled]="login.invalid">Submit</button>
+        </div>
+        
+      </form>
+    </div>
+  </div>

@@ -22,6 +22,10 @@
     // line-height: 134.906%;
 }
 
+.disabled {
+    pointer-events: none
+  }
+
 
 .active {
     font-weight: 600;
@@ -29,7 +33,7 @@
 }
 
 .nav-icon {
-    margin-left: 330px;
+    margin-left: 280px;
 }
 
 .nav-hr {

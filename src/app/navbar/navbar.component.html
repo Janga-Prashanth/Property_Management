@@ -21,13 +21,22 @@
             <li class="nav-item">
                 <a class="nav-link text-white mx-2" data-toggle="tab" routerLink="/finance" routerLinkActive="active">Financial</a>
             </li>
-            <a class="nav-item text-white" href="###">
+            <li class="nav-item">
                 <span class="nav-link nav-icon">
-                    <i class="fa fa-search mx-3" aria-hidden="true"></i>
-                    <i class="fa fa-bell-o mx-3" aria-hidden="true"></i>
-                    <i class="fa fa-user-o mx-3" aria-hidden="true"></i>
+                    <a href="" class="disabled"><i class="fa fa-search mx-3 text-white" aria-hidden="true"></i></a>
+                    <a target="_blank" role="button"><i class="fa fa-bell-o mx-3 text-white" aria-hidden="true"></i></a>
+                    <span class="nav-item dropdown">
+                        <span class="avathar-icon" data-bs-toggle="dropdown">
+                            <i class="fa fa-user-o mx-3 text-white" aria-hidden="true"></i>
+                        </span>
+                        <ul class="dropdown-menu logout-left">
+                            <li><a class="dropdown-item" href="javascript:void(0)">My Profile</a></li>
+                            <li><a class="dropdown-item">Settings</a></li>
+                            <li><a class="dropdown-item" type="button" (click)="logout()">Sign Out</a></li>
+                        </ul>
+                    </span>
                 </span>
-            </a>
+            </li>
         </ul>
     </div>
 </nav>

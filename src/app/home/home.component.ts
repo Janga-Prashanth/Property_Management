@@ -3,7 +3,8 @@ import { ApiService } from '../services/api.service';
 import { MAT_DIALOG_DATA,MatDialogRef,MatDialog } from '@angular/material/dialog';
 import { PropertyDetailsComponent } from '../property-details/property-details.component';
 import {ActivatedRoute, Router } from '@angular/router';
-
+import { LoginComponent } from '../login/login.component';
+import { AuthService } from '../services/auth.service';
 
 
 @Component({
@@ -18,7 +19,8 @@ export class HomeComponent implements OnInit{
   constructor(private api : ApiService,
     public dialog: MatDialog, 
     private route: ActivatedRoute, 
-    private router: Router
+    private router: Router,
+    public auths: AuthService
     ){}
 
 
@@ -61,5 +63,27 @@ export class HomeComponent implements OnInit{
   // setcondition(){
   //  this.condition=true;
   // }
+
+  username= localStorage.getItem('username');
+  alertm(){
+    if(!this.auths.isLoggedIn){
+      alert("Please Login")
+    }
+  }
+
+  login(){
+      const dialogRef1=this.dialog.open(LoginComponent, {
+        width:'30%',
+        height:'50%'
+      });
+      dialogRef1.afterClosed().subscribe(val=>{
+        if(val == 'save'){
+        }
+      })
+  }
+
+  logout(){
+    this.auths.Logout();
+  }
 
 }

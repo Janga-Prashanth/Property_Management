@@ -8,6 +8,8 @@ import { PropertyDetailsComponent } from './property-details/property-details.co
 import { TenantsComponent } from './tenants/tenants.component';
 import { TenantDetailsComponent } from './tenant-details/tenant-details.component';
 import { MaintenanceDetailsComponent } from './maintenance-details/maintenance-details.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { auth1Guard } from './gaurds/auth1.guard';
 
 
 const appRoute: Routes = [
@@ -19,25 +21,34 @@ const appRoute: Routes = [
     ]
   },
   {
-    path: 'properties', component: ManagementComponent,
+    path: 'properties', 
+    component: ManagementComponent,
+    canActivate: [auth1Guard],
     children: [
       { path: 'propertydetails/:id', component: PropertyDetailsComponent },
     ]
   },
   {
-    path: 'tenant', component: TenantsComponent,
+    path: 'tenant',
+    component: TenantsComponent,
+    canActivate: [auth1Guard],
     children: [
       { path: 'tenantdetails/:id', component: TenantDetailsComponent }
     ]
   },
   {
-    path: 'maintenance', component: MaintenanceComponent,
+    path: 'maintenance', 
+    component: MaintenanceComponent,   
+    canActivate: [auth1Guard], 
     children: [
       { path: 'maintenancedetails/:id', component: MaintenanceDetailsComponent }
     ]
   },
-  { path: 'finance', component: FinancialComponent },
-  { path: '**', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'finance', 
+  component: FinancialComponent,
+  canActivate: [auth1Guard],
+ },
+  { path: '**', component:NotfoundComponent },
 ]
 
 @NgModule({

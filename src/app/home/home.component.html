@@ -1,7 +1,7 @@
 
 <div class="bgimg">
     <div class="container">
-        <nav class="navbar navbar-expand-lg sticky-top ps-3">
+        <nav class="navbar navbar-expand-lg ps-3">
             <a class="navbar-brand" href="#"><i class="fa fa-arrow-up" aria-hidden="true"></i>PROPSMART</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,7 +13,7 @@
                         <a class="nav-link active text-white" data-toggle="tab" routerLink="/home">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" data-toggle="tab" routerLink="/properties">Property Management</a>
+                        <a class="nav-link text-white" data-toggle="tab" routerLink="/properties" (click)="alertm()">Property Management</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" data-toggle="tab" routerLink="/tenant">Tenants</a>
@@ -24,13 +24,25 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" data-toggle="tab" routerLink="/finance">Financial</a>
                     </li>
-                    <a class="nav-item text-white" href="###">
+                    <li class="nav-item text-white" >
                         <span class="nav-link nav-icon">
                             <i class="fa fa-search mx-3" aria-hidden="true"></i>
                             <i class="fa fa-bell-o mx-3" aria-hidden="true"></i>
-                            <i class="fa fa-user-o mx-3" aria-hidden="true"></i>
+                            <span class="nav-item dropdown" *ngIf="auths.isLoggedIn()">
+                                <span class="avathar-icon" data-bs-toggle="dropdown">
+                                    <i class="fa fa-user-o mx-3 text-white" aria-hidden="true"></i>
+                                </span> 
+                                <ul class="dropdown-menu logout-left">
+                                    <li><a class="dropdown-item disabled" disabled="true" href="javascript:void(0)">My Profile</a></li>
+                                    <li><a class="dropdown-item disabled">Settings</a></li>
+                                    <li><a class="dropdown-item" type="button" (click)="logout()">Sign Out</a></li>
+                                </ul>
+                            </span>
                         </span>
-                    </a>
+                    </li>
+                    <li class="nav-item my-auto" *ngIf="!auths.isLoggedIn()">
+                        <button class="btn btn1 btn-info" (click)="login()">Login</button>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -39,7 +51,7 @@
             Jun 01,2023 - Jun 05,2023
         </div>
         <div class="ms-3">
-            <span class="greet">Welcome back,Admin</span><br>
+            <span class="greet">Welcome </span><span class="greet" *ngIf="auths.isLoggedIn()">back {{username | uppercase}}</span><br>
             <span class="subtext">Simplify Property Management: Efficient, Reliable, and Hassle-free.</span>
         </div>
         <div class="row mt-5 ms-3">

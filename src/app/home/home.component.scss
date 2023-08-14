@@ -38,7 +38,17 @@
 }
 
 .nav-icon {
-    margin-left: 290px;
+    margin-left: 230px;
+}
+
+.disabled {
+    pointer-events: none
+  }
+
+.btn{
+    // --bs-btn-padding-x: 0;
+    --bs-btn-padding-y:0;
+    // --bs-btn-line-height: 0;
 }
 
 .nav-hr {
