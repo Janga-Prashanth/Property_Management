@@ -23,10 +23,10 @@
           <div class="col-6">
             <p>Maintenance Request: <br><span class="pvalue">{{property.maintainance_request}}</span></p>
           </div>
-          <div class="col-6" *ngIf="homec">
+          <div class="col-6" *ngIf="!deleteprop">
             <button class="btn bg-default text-danger pdetails" (click)="deleteproperty(property.id)" ><u>Remove This Property</u></button>
           </div>
-          <div class="col-6" *ngIf="homec"></div>
+          <div class="col-6" *ngIf="!deleteprop"></div>
           <div class="col-6">
             <button class="btn btn-primary px-5" routerLink="../../" routerLinkActive="active">Close</button>
           </div>

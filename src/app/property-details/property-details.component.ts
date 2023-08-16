@@ -44,17 +44,17 @@ export class PropertyDetailsComponent implements OnInit{
     } )
   }
 
-  homec = false;
+  deleteprop = false;
 
   navbar(){
     this.router.events.subscribe(
       (val)=>{
         if(val instanceof NavigationEnd){
           if(val.url.includes('/properties')){
-            this.homec=true
+            this.deleteprop=false;
           }
           else{
-            this.homec=false
+            this.deleteprop=true;
           }
         }
       }

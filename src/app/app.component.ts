@@ -22,7 +22,7 @@ export class AppComponent implements OnInit{
     this.router.events.subscribe(
       (val)=>{
         if(val instanceof NavigationEnd){
-          if((val.url=='/home') || val.url==('/')){   //val.url.includes('/home')
+          if(val.url.includes('/home') || val.url==('/')){   //(val.url=='/home')
             this.homec=false;
           }
           else{
