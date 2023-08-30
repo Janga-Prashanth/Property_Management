@@ -14,7 +14,9 @@ export class ApppropertyComponent implements OnInit {
   constructor(private dialogref: MatDialogRef<ApppropertyComponent>,
                 private fb: FormBuilder,
                 private api: ApiService,
-                 @Inject(MAT_DIALOG_DATA) public editdata: any,){}
+                 @Inject(MAT_DIALOG_DATA) public editdata: any,){
+                  dialogref.disableClose = true;
+                 }
 
 
   ngOnInit(): void {
@@ -47,7 +49,7 @@ export class ApppropertyComponent implements OnInit {
       lease_details: ["August 9, 2023 - August 8, 2025"], 
       maintainance_request: ["nill"],
       nearby_places: [null],             
-      description: [null],      
+      description: [null],
     });
   }
 

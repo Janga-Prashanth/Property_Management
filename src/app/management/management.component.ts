@@ -45,11 +45,9 @@ export class ManagementComponent implements OnInit {
           // console.log(res);
         },
         error: (err) => {alert("Error While Fetching the data")}
-      } 
+      }
       )
-    }
-
-    
+    }    
 
   getproductinfo(row:any) {
     const dialogRef2=this.dialog.open(PropertyDetailsComponent, {      
@@ -67,7 +65,9 @@ export class ManagementComponent implements OnInit {
 }
 
 addpdialog() {
+  // this.router.navigate[('addproperty')];
   const dialogRef1=this.dialog.open(ApppropertyComponent, {
+    disableClose: true,
     width:'100%',
     height:'90%',
     position: { bottom: '1' },
