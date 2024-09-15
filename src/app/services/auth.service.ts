@@ -8,40 +8,39 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class AuthService {
 
-  constructor( private router : Router) { }
+  constructor(private router: Router) { }
 
-  setToken(token: string, username:string): void {
+  setToken(token: string, username: string): void {
     localStorage.setItem('token', token);
     localStorage.setItem('username', username);
+  }
+
+  Login({ email, password }: any): Observable<any> {
+    if (email == "superadmin@propsmart.com" && password == "admin@123") {
+      this.setToken('abcdefghijklmnopqrstuvwxyz', 'Bale');
+      return of({ name: 'Srinivas Rao Desai', email: 'admin@gmail.com' });
     }
-
-    getToken(): string | null {
-    return localStorage.getItem('token');
-    }
-
-    gwtUserName(): string | null {
-      return localStorage.getItem('username');
-      }
-
-    isLoggedIn() {
-    return this.getToken() != null;
-    }
-
-    Logout() {
-      localStorage.removeItem('token');
-      localStorage.removeItem('username');
+    else {
       this.router.navigate(['home']);
-      }
+      return throwError(new Error('Username And Password Not Matching'));
+    }
+  }
 
-    
-      Login({ email, password }: any): Observable<any> {
-      if (email == "superadmin@propsmart.com" && password == "admin@123") {
-      this.setToken('abcdefghijklmnopqrstuvwxyz','Bale');
-      return of ({ name: 'Srinivas Rao Desai', email: 'admin@gmail.com' });
-      }
-      else{
-        this.router.navigate(['home']);
-        return throwError(new Error('Username And Password Not Matching'));
-      }
-    }    
+  getToken(): string | null {
+    return localStorage.getItem('token');
+  }
+
+  gwtUserName(): string | null {
+    return localStorage.getItem('username');
+  }
+
+  isLoggedIn() {
+    return this.getToken() != null;
+  }
+
+  Logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
+    this.router.navigate(['home']);
+  }
 }

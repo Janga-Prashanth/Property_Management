@@ -1,19 +1,125 @@
 {
-  "posts": [
+  "property_type": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "id": "1",
+      "name": "Residential"
+    },
+    {
+      "id": "2",
+      "name": "Commercial"
+    },
+    {
+      "id": "3",
+      "name": "Industrial"
+    },
+    {
+      "id": "4",
+      "name": "Special Use"
     }
   ],
-  "comments": [
+  "nearby_places": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": "1",
+      "name": "Rail Stop"
+    },
+    {
+      "id": "2",
+      "name": "Bus Stop"
+    },
+    {
+      "id": "3",
+      "name": "Retail Shop"
+    },
+    {
+      "id": "4",
+      "name": "Park"
+    },
+    {
+      "id": "5",
+      "name": "Play Ground"
+    },
+    {
+      "id": "6",
+      "name": "Swimming pool"
+    },
+    {
+      "id": "7",
+      "name": "Elementory School"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "properties": [
+    {
+      "id": "13",
+      "img": "../assets/images/Rectangle 93 (5).png",
+      "name": "Jpr",
+      "address": {
+        "street_name": "4517",
+        "city": "Washington Ave",
+        "state": "Manchester",
+        "zip_code": "39495"
+      },
+      "status": "Available",
+      "property_type": "Private House",
+      "rent": 1200,
+      "outsatnading_payment": "Nill",
+      "tenant_details": "Kathryn Murphy tanya.hill@example.com (225) 555-0118",
+      "lease_details": "August 9, 2023 - August 8, 2025",
+      "maintainance_request": "nill",
+      "nearby_places": [
+        "Park",
+        "Play Ground"
+      ],
+      "description": "Everything Good"
+    },
+    {
+      "id": null,
+      "img": "../assets/images/Rectangle 93 (5).png",
+      "name": "Wonder Villa",
+      "address": {
+        "street_name": "4517",
+        "city": "Washington Ave",
+        "state": "illford",
+        "zip_code": "Ign323"
+      },
+      "status": "Available",
+      "property_type": "Commercial",
+      "rent": 1200,
+      "outsatnading_payment": "Nill",
+      "tenant_details": "Kathryn Murphy tanya.hill@example.com (225) 555-0118",
+      "lease_details": "August 9, 2023 - August 8, 2025",
+      "maintainance_request": "",
+      "nearby_places": [
+        "Bus Stop",
+        "Retail Shop",
+        "Park",
+        "Swimming pool"
+      ],
+      "description": "Good for parties"
+    },
+    {
+      "id": null,
+      "img": "../assets/images/Rectangle 93 (5).png",
+      "name": "Vamshi Residenecy",
+      "address": {
+        "street_name": "9086 Street",
+        "city": "Kells Tuny",
+        "state": "B rixton",
+        "zip_code": "Brzn87"
+      },
+      "status": "Available",
+      "property_type": "Special Use",
+      "rent": 2000,
+      "outsatnading_payment": "Nill",
+      "tenant_details": "Kathryn Murphy tanya.hill@example.com (225) 555-0118",
+      "lease_details": "August 9, 2023 - August 8, 2025",
+      "maintainance_request": "nill",
+      "nearby_places": [
+        "Rail Stop",
+        "Bus Stop",
+        "Retail Shop",
+        "Play Ground"
+      ],
+      "description": "Good for One night stand"
+    }
+  ]
 }
